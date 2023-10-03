@@ -39,7 +39,7 @@ assemblies_ch = Channel.fromPath("${params.assemblies}", checkIfExists: true).ma
 
 process PROKKA {
 
-    cpus 8
+    label 'process_low'
     tag "PROKKA ${sample_id}"
     publishDir "${params.outdir}/prokka/", mode: 'copy'
 
